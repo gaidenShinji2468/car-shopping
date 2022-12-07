@@ -1,5 +1,9 @@
 :root {
-
+    --salmon: #eb4a5a;
+    --white: #f9fafc;
+    --cream: #f6f3f3;
+    --black: #434343;
+    --blue: #274671;
 }
 
 *, *::before, *::after {
@@ -8,3 +12,170 @@
     box-sizing: border-box;
 }
 
+html {
+    font-family: "Roboto", sans-serif;
+    /* regular: 400
+     * medium: 500
+     * bold: 700
+     * */
+    font-size: 16px;
+    font-weight: 700;
+}
+
+/*DEBUG START*/
+main {
+    width: 100vw;
+    height: 200px;
+    border: 1px solid red;
+}
+/*DEBUG END*/
+
+@media screen and (min-width: 300px) {
+    /* Header and Navbar */
+    #header-main {
+        display: flex;
+	flex-direction: column;
+    }
+
+    #header-main nav {
+        display: grid;
+	grid-template-columns: 3.5fr .5fr;
+	width: 100vw;
+	padding: 10px 0;
+	position: sticky;
+	top: 0;
+	background-color: white;
+    }
+
+    #header-main nav h1 {
+	padding-left: 20px;
+    }
+
+    #header-main nav h1 a {
+	display: flex;
+	width: 120px;
+	justify-content: flex-start;
+	align-items: center;
+	color: var(--black);
+	font-size: 18px;
+	text-decoration: none;
+    }
+
+    #header-main nav h1 a img {
+        margin-right: 4px;
+    }
+
+    #header-main nav h1 + button {
+	background-color: white;
+	border: none;
+
+	color: var(--black);
+	font-size: 24px;
+	text-align: center;
+	padding-right: 10px;
+    }
+
+    /* Offcanvas */
+    .offcanvas {
+        display: flex;
+	flex-direction: column;
+	width: 280px;
+	height: 100vh;
+	background-color: white;
+	position: fixed;
+	top: 0;
+	right: 0;
+    }
+
+    .offcanvas .offcanvas-button {
+        display: block;
+	margin: 5px 0 2px 260px;
+    }
+
+    .close-offcanvas {
+        right: -290px;
+    }
+
+    .offcanvas h3 {
+        font-size: 16px;
+	margin-left: 35px;
+    }
+
+    .offcanvas figure {
+        width: 220px;
+	height: 200px;
+	margin: 20px auto;
+
+	border: 1px solid red; /*DEBUG*/
+    }
+
+    .offcanvas footer {
+        display: block;
+    }
+
+    .offcanvas footer button {
+	display: block;
+        background-color: var(--salmon);
+	border: none;
+	color: white;
+	margin-left: 43px;
+    }
+
+    #header-main nav + figure {
+         width: 100vw;
+	 height: 150px;
+	 background-color: var(--salmon);
+    }
+
+    #header-main figure img {
+	display: block;
+        width: 80px;
+	height: 80px;
+	margin: 35px auto 35px auto;
+    }
+
+    #header-main div {
+        display: grid;
+	grid-template-columns: 3.5fr 2.5fr;
+	width: 100vw;
+	height: 50px;
+	padding: 5px;
+	margin: 20px 0;
+    }
+
+    #header-main div h2 {
+        font-size: 18px;
+	padding-left: 15px;
+    }
+
+    #header-main div select {
+        color: var(--black);
+	padding: 5px;
+	margin-right: 10px;
+    }
+
+    /* Footer */
+    .footer-main {
+	display: flex;
+        width: 100vw;
+	height: 60px;
+	justify-content: center;
+	align-items: center;
+    }
+
+    .footer-main button {
+        width: 200px;
+	height: 30px;
+	font-size: 12px;
+	border: 1px solid var(--blue);
+	color: var(--blue);
+	background-color: white;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    /* Header and Navbar */
+    #header-main div {
+        grid-template-columns: 3.5fr 1fr;
+    }
+}

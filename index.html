@@ -3,8 +3,66 @@
     <head>
         <meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	<title>Car Shopping</title>
+	<title>Shopping Car</title>
+	<!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+
+	<!-- FontAwesome icons -->
+	<script src="https://kit.fontawesome.com/93595c8f3a.js" crossorigin="anonymous"></script>
+
 	<link rel="stylesheet" href="assets/styles/styles.css"/>
     </head>
-    <body></body>
+    <body>
+	<header id="header-main">
+            <nav id="nav-main">
+		<h1>
+		    <a href="#">
+		        <img type="image/png" src="assets/img/logo_32.png"/>Academlo
+		    </a>
+		</h1>
+	        <button class="offcanvas-button">
+                    <i class="fa-solid fa-cart-shopping"></i>
+	        </button>
+		<section class="offcanvas close-offcanvas">
+		    <span class="offcanvas-button">
+                        <i class="fa-solid fa-xmark"></i>
+		    </span>
+		    <h3>Carrito de compras</h3>
+		    <figure>
+                        <figcaption>
+                            <p></p><p></p>
+			</figcaption>
+		    </figure>
+		    <footer class="footer-main">
+                        <button>
+                            Ir al carrito
+			</button>     
+		    </footer>
+		</section>
+	    </nav>
+	    <figure>
+                <img type="image/png" src="assets/img/logo_2_white.png"/>
+	    </figure>
+	    <div>
+                <h2>Todos nuestros productos</h2>
+		<select>
+		    <option selected>Todos</option>
+		</select>
+	    </div>
+	</header>
+	<main>
+	    <ul id="products">
+	    </ul>
+	</main>
+	<footer class="footer-main">
+	    <button>
+                Más productos
+	    </button>
+	</footer>
+    </body>
+    <!-- Axios -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
 </html>
