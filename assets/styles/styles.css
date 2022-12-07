@@ -22,14 +22,6 @@ html {
     font-weight: 700;
 }
 
-/*DEBUG START*/
-main {
-    width: 100vw;
-    height: 200px;
-    border: 1px solid red;
-}
-/*DEBUG END*/
-
 @media screen and (min-width: 300px) {
     /* Header and Navbar */
     #header-main {
