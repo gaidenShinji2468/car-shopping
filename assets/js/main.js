@@ -11,7 +11,8 @@ import {
 navbarRun();
 offcvRun();
 
-getProducts(printProducts);
+window.addProduct = addProduct;
+window.deleteProduct = deleteProduct;
+window.printProducts = printProducts;
 
-/*window.addProduct = addProduct;
-window.deleteTask = deleteTask;*/
+getProducts(); // utiliza el printProducts, debe ir despues de su asignacion global

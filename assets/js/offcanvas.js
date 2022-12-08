@@ -1,55 +1,43 @@
-/*
-<section class="offcanvas close-offcanvas">
-    <span class="offcanvas-button">
-        <i class="fa-solid fa-xmark"></i>
-    </span>
-    <h3>Carrito de compras</h3>
+let products = JSON.parse(localStorage.getItem("products"));
+let html = `
+<span class="offcanvas-button">
+    <i class="fa-solid fa-xmark"></i>
+</span>
+<h3>Carrito de compras</h3>
+`;
+
+for(let product of products)
+{
+    let price = parseFloat(product.price).toFixed(2);
+    html += `
     <figure>
+        <img type="image/jpg" src="${product.images.image1}"/>
+        <div>
+            <p>${product.name}</p>
+            <p>\$${price}</p>
+        </div>
         <figcaption>
-            <p></p><p></p>
+            <p>Subtotal:</p><p>\$${price}</p>
         </figcaption>
+        <button onclick="deleteProduct(${product.id})">
+            <i class="fa-solid fa-trash-can"></i>
+        </button>
     </figure>
-    <footer class="footer-main">
-        <button>
-            Ir al carrito
-	</button>     
-    </footer>
-</section>
-*/
+    <hr/>
+    `;
+}
 
-// Ensamblar el offcanvas
-// 1° Especificar los elementos
+html += `
+<footer class="footer-main">
+    <button>
+        Ir al carrito
+    </button>     
+</footer>
+`;
+
 let section = document.createElement("section");
-let span = document.createElement("span");
-let i = document.createElement("i");
-let h3 = document.createElement("h3");
-let title = document.createTextNode("Carrito de compras");
-let figure = document.createElement("figure");
-let figcaption = document.createElement("figcaption");
-let p1 = document.createElement("p");
-let p2 = document.createElement("p");
-let footer = document.createElement("footer");
-let button = document.createElement("button");
-let buttonTitle = document.createTextNode("Ir al carrito");
-
-// 2° Asignar los atributos
 section.setAttribute("class", "offcanvas close-offcanvas");
-span.setAttribute("class", "offcanvas-button");
-i.setAttribute("class", "fa-solid fa-xmark");
-footer.setAttribute("class", "footer-main");
-
-// 3° Construir la jerarquia de elementos
-span.appendChild(i);
-h3.appendChild(title);
-figcaption.appendChild(p1);
-figcaption.appendChild(p2);
-figure.appendChild(figcaption);
-button.appendChild(buttonTitle);
-footer.appendChild(button);
-section.appendChild(span);
-section.appendChild(h3);
-section.appendChild(figure);
-section.appendChild(footer); // contenedor principal del offcanvas
+section.innerHTML = html; // contenedor principal del offcanvas
 
 function insertOffcanvas()
 {

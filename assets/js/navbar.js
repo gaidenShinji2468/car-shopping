@@ -1,5 +1,6 @@
 let header = document.getElementById("header-main");
-
+// TODO: la ruta de la imagen debe ser dinamica para otras vistas a 
+// parte del index
 /* <nav id="nav-main">
        <h1>
            <a href="#">

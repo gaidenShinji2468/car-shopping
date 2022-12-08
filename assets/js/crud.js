@@ -1,11 +1,11 @@
 const BASE_URL = "https://academlo-api-production.up.railway.app/api";
 let editId = null;
 
-function getProducts(printProducts)
+function getProducts()
 {
     axios.get(`${BASE_URL}/products`)
 	.then((res) => {
-            printProducts(res.data);;
+            printProducts(res.data);
 	})
 	.catch((err) => {
             console.log(err);
@@ -29,19 +29,13 @@ function addProduct(id)
 }
 
 function deleteProduct(id)
-{
-    axios.get()
-	.then((res) => {
-            editId = id;
-	    let prod2del = JSON.parse(localStorage.getItem("products"));
-	    let products = prod2del.filter(element => element.id !== editId);
-	    localStorage.clear();
-	    localStorage.setItem("products", JSON.stringify(products));
-	    location.reload();
-	})
-	.catch((err) => {
-            console.log(err);
-	});
+{   
+    let prod2del = JSON.parse(localStorage.getItem("products"));
+    let products = prod2del.filter(element => element.id !== id);
+    
+    localStorage.clear();
+    localStorage.setItem("products", JSON.stringify(products));
+    location.reload();	
 }
 
 export {
