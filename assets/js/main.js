@@ -1,4 +1,5 @@
-import {run} from "./offcanvas.js";
+import {offcvRun} from "./offcanvas.js";
+import {navbarRun} from "./navbar.js";
 import {printProducts} from "./ui.js";
 import {
     getProducts,
@@ -6,8 +7,9 @@ import {
     deleteProduct
 } from "./crud.js";
 
-// Ejecutar el offcanvas
-run();
+// Ejecutar primero el navbar y luego el offcanvas
+navbarRun();
+offcvRun();
 
 getProducts(printProducts);
 
