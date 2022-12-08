@@ -1,4 +1,4 @@
-let products = JSON.parse(localStorage.getItem("products"));
+let products = JSON.parse(localStorage.getItem("products")) || [];
 let html = `
 <span class="offcanvas-button">
     <i class="fa-solid fa-xmark"></i>
